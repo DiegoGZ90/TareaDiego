@@ -1,0 +1,32 @@
+package tareaprograiipoo;
+
+public class CalculadoraEspecial extends Calculadora {
+    
+    private final boolean tieneFuncionesTrigonometricas;
+
+    
+    public CalculadoraEspecial(String propietario) {
+        super(propietario); 
+        this.tipoCalculadora = "Calculadora Científica";
+        this.dimensionPantalla = 12;
+        this.tieneFuncionesTrigonometricas = true;
+    }
+
+    CalculadoraEspecial() {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    // Métodos adicionales específicos de la calculadora científica
+    public double calcularPotencia(double base, double exponente) {
+        return Math.pow(base, exponente);
+    }
+
+   
+    @Override
+    public double sumar(double primerNumero, double segundoNumero) {
+       
+        double resultado = super.sumar(primerNumero, segundoNumero);
+        
+        return resultado;
+    }
+}
