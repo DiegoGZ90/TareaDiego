@@ -1,0 +1,89 @@
+package tareaprograiipoo;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class CalculadoraGUI extends JFrame {
+
+    private final JLabel label1;
+    private final JLabel label2;
+    private final JTextField textField1;
+    private final JTextField textField2;
+    private final JButton sumarButton;
+    private final JButton restarButton;
+    private final JButton multiplicarButton;
+    private final JButton dividirButton;
+    private final JButton raizCuadradaButton;
+    private final JButton verificarPrimoButton;
+
+    public CalculadoraGUI() {
+        setTitle("Calculadora");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
+
+        label1 = new JLabel("Primer número:");
+        label1.setBounds(30, 30, 100, 20);
+        add(label1);
+
+        label2 = new JLabel("Segundo número:");
+        label2.setBounds(30, 60, 100, 20);
+        add(label2);
+
+        textField1 = new JTextField();
+        textField1.setBounds(140, 30, 100, 20);
+        add(textField1);
+
+        textField2 = new JTextField();
+        textField2.setBounds(140, 60, 100, 20);
+        add(textField2);
+
+        sumarButton = new JButton("Sumar");
+        sumarButton.setBounds(30, 100, 100, 30);
+        sumarButton.addActionListener(e -> sumar());
+        add(sumarButton);
+
+        restarButton = new JButton("Restar");
+        restarButton.setBounds(140, 100, 100, 30);
+        restarButton.addActionListener(e -> restar());
+        add(restarButton);
+
+        multiplicarButton = new JButton("Multiplicar");
+        multiplicarButton.setBounds(30, 140, 100, 30);
+        multiplicarButton.addActionListener(e -> multiplicar());
+        add(multiplicarButton);
+
+        dividirButton = new JButton("Dividir");
+        dividirButton.setBounds(140, 140, 100, 30);
+        dividirButton.addActionListener(e -> dividir());
+        add(dividirButton);
+
+        raizCuadradaButton = new JButton("Raíz Cuadrada");
+        raizCuadradaButton.setBounds(30, 180, 120, 30);
+        raizCuadradaButton.addActionListener(e -> raizCuadrada());
+        add(raizCuadradaButton);
+
+        verificarPrimoButton = new JButton("Verificar Primo");
+        verificarPrimoButton.setBounds(160, 180, 120, 30);
+        verificarPrimoButton.addActionListener(e -> verificarPrimo());
+        add(verificarPrimoButton);
+    }
+
+    private double obtenerNumero1() {
+        try {
+            return Double.parseDouble(textField1.getText());
+        } catch (NumberFormatException e) {
+            mostrarError("Error: Ingresa un número válido en el primer campo");
+        }
+        return 0;
+    }
+
+    private double obtenerNumero2() {
+        try {
+            return Double.parseDouble(textField2.getText());
+        } catch (
+
